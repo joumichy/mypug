@@ -166,10 +166,6 @@ class ActualityAllState extends State<ActualityAll> {
   }
 
   Widget newContent() {
-    String pathImage = notifier.isDark
-        ? "asset/images/logo-header-dark.png"
-        : "asset/images/logo-header-light.png";
-
     return StreamBuilder(
       stream: streamController.stream,
       builder: (context, snapshot) {

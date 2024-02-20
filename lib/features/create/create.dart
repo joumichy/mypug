@@ -14,6 +14,8 @@ import 'package:photo_manager/photo_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:super_tooltip/super_tooltip.dart';
 
+import '../../components/editpug/editpug.dart';
+
 class CreatePug extends StatefulWidget {
   final routeName = '/create';
 
@@ -41,7 +43,7 @@ class CreatePugState extends State<CreatePug> {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       tooltip = SuperTooltip(
         popupDirection: TooltipDirection.up,
         showCloseButton: ShowCloseButton.inside,
@@ -271,8 +273,8 @@ class CreatePugState extends State<CreatePug> {
         ElevatedButton(
             style: BaseButtonRoundedColor(60, 40, Colors.indigo[300]),
             onPressed: () {
-              _controller.crop();
-              // navigateTo(context, EditPug.withFile(file: imageFile, isCrop: isCrop));
+              // _controller.crop();
+              navigateTo(context, EditPug.withFile(file: imageFile, isCrop: isCrop));
             },
             child: const Text('Valider'))
       ],
